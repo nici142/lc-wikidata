@@ -4,6 +4,7 @@ export type Location = "balkon" | "garten" | "zimmer";
 export type ToxicityLevel = "giftig" | "leicht_giftig" | "ungiftig";
 export type Sunlight = "sonne" | "halbschatten" | "schatten";
 export type Watering = "wenig" | "mittel" | "viel";
+export type Category = "zier" | "gemuese";
 
 export interface Toxicity {
   cats: ToxicityLevel;
@@ -24,6 +25,8 @@ export interface Plant {
   watering: Watering;
   careTips: string[];
   toxicity: Toxicity;
+  /** Optional: markiert Gemüse-/Nutzpflanzen. Fehlt bei Zierpflanzen. */
+  category?: Category;
 }
 
 export const SEASON_LABELS: Record<Season, string> = {

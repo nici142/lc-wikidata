@@ -5,6 +5,7 @@ const links = [
   { to: "/suche", label: "Suche", icon: "🔍" },
   { to: "/balkon", label: "Balkon", icon: "🪴" },
   { to: "/garten", label: "Garten", icon: "🌳" },
+  { to: "/gemuese", label: "Gemüse", icon: "🥕" },
   { to: "/zimmer", label: "Zimmer", icon: "🏠" },
   { to: "/pflege", label: "Pflegeaufwand", icon: "🧰" },
   { to: "/tiere", label: "Tiersicherheit", icon: "🐾" },

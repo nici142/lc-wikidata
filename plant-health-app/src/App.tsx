@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import DiagnosePage from "./pages/DiagnosePage";
 import BalconyPage from "./pages/BalconyPage";
 import GardenPage from "./pages/GardenPage";
+import VegetablePage from "./pages/VegetablePage";
 import IndoorPage from "./pages/IndoorPage";
 import CarePage from "./pages/CarePage";
 import PetSafetyPage from "./pages/PetSafetyPage";
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/suche" element={<SearchPage />} />
           <Route path="/balkon" element={<BalconyPage />} />
           <Route path="/garten" element={<GardenPage />} />
+          <Route path="/gemuese" element={<VegetablePage />} />
           <Route path="/zimmer" element={<IndoorPage />} />
           <Route path="/pflege" element={<CarePage />} />
           <Route path="/tiere" element={<PetSafetyPage />} />
