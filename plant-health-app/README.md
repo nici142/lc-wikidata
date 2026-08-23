@@ -5,19 +5,15 @@ Eine Web-App rund um Pflanzengesundheit und Pflanzenwahl:
 - **📷 Diagnose** – Foto einer Pflanze hochladen und eine Einschätzung zum
   Gesundheitszustand erhalten (mögliche Nährstoffmängel, Trockenstress,
   Pilzbefall/Schädlinge, Mehltau-Anzeichen).
-- **🔍 Suche** – pflanzenübergreifende Live-Suche nach deutschem oder
-  botanischem Namen (umlauttolerant).
-- **🪴 Balkonpflanzen** – die passenden Pflanzen für Frühling, Sommer, Herbst
-  und Winter.
-- **🌳 Gartenpflanzen** – ideale Pflanzen fürs Beet, filterbar nach
-  Pflegeaufwand.
-- **🥕 Gemüse** – welches Gemüse sich in Kübeln auf dem Balkon ziehen lässt
-  und welches wegen Platz-/Wurzelbedarf eher ein Gartenbeet braucht.
-- **🏠 Zimmerpflanzen** – ganzjährig geeignete Pflanzen fürs Zuhause.
-- **🧰 Pflegeaufwand** – Übersicht leicht/mittel/anspruchsvoll zu pflegender
-  Pflanzen für Balkon, Garten und Zimmer.
-- **🐾 Tiersicherheit** – welche Pflanzen bei Katzen- und/oder Hundehaltung
-  unbedenklich sind und welche giftig sind.
+- **🌿 Pflanzenfinder** – eine Seite für alles andere: Freitextsuche
+  (umlauttolerant) plus fünf kombinierbare Filter – Standort (Balkon/
+  Garten/Zimmer), Kategorie (Zier-/Gemüsepflanzen), Jahreszeit,
+  Pflegeaufwand und Tierhaltung (z. B. „nur katzensicher"). Der Filterstand
+  landet in der URL und lässt sich so teilen/mit Zurück-Button aufrufen.
+
+Alte Direktlinks wie `/balkon`, `/garten`, `/zimmer`, `/gemuese`, `/tiere`,
+`/pflege` und `/suche` funktionieren weiterhin – sie leiten mit passend
+vorbelegten Filtern auf `/pflanzen` um.
 
 ## Tech-Stack
 
@@ -64,6 +60,8 @@ ergänzen.
 ## Design
 
 Farbpalette, Typografie (Fraunces für Überschriften) und Komponenten
-(`PageHeader`, `FilterChip`, `PlantCard`) sind in `src/index.css` bzw.
-`src/components/` zentral definiert, damit alle Seiten ein einheitliches
-Erscheinungsbild teilen.
+(`Logo`, `PageHeader`, `FilterChip`, `FilterGroup`, `PlantCard`) sind in
+`src/index.css` bzw. `src/components/` zentral definiert, damit beide
+Seiten ein einheitliches Erscheinungsbild teilen. Das Logo (Sprössling auf
+abgerundeter Kachel) ist identisch als Nav-Logo (`Logo.tsx`) und als
+Favicon (`public/favicon.svg`) hinterlegt.
