@@ -41,7 +41,7 @@ export default function Nav() {
         <div className="flex items-center gap-2.5">
           <Logo />
           <span className="font-display text-xl font-semibold tracking-tight text-leaf-900">
-            Pflanzenkompass
+            PlantBuddy
           </span>
         </div>
         <nav className="-mx-1 flex flex-wrap gap-1 overflow-x-auto sm:mx-0">

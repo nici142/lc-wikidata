@@ -26,7 +26,7 @@ export default function App() {
         </Routes>
       </main>
       <footer className="mx-auto max-w-6xl px-4 py-10 text-center text-xs text-bark-400">
-        🌿 Pflanzenkompass – Bilddiagnose läuft lokal im Browser. Kein Ersatz für fachlichen
+        🌿 PlantBuddy – Bilddiagnose läuft lokal im Browser. Kein Ersatz für fachlichen
         oder tierärztlichen Rat.
       </footer>
     </div>
