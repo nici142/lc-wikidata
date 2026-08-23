@@ -62,3 +62,27 @@ export const TOXICITY_LABELS: Record<ToxicityLevel, string> = {
   leicht_giftig: "Leicht giftig",
   ungiftig: "Unbedenklich",
 };
+
+export const SUNLIGHT_LABELS: Record<Sunlight, string> = {
+  sonne: "Sonne",
+  halbschatten: "Halbschatten",
+  schatten: "Schatten",
+};
+
+export const SUNLIGHT_ICONS: Record<Sunlight, string> = {
+  sonne: "🌞",
+  halbschatten: "⛅",
+  schatten: "🌑",
+};
+
+export const WATERING_LABELS: Record<Watering, string> = {
+  wenig: "Wenig Wasser",
+  mittel: "Mittlerer Wasserbedarf",
+  viel: "Viel Wasser",
+};
+
+export const WATERING_ICONS: Record<Watering, string> = {
+  wenig: "💧",
+  mittel: "💧💧",
+  viel: "💧💧💧",
+};

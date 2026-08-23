@@ -9,16 +9,28 @@ Eine Web-App rund um Pflanzengesundheit und Pflanzenwahl:
   Gesundheitszustand erhalten (mögliche Nährstoffmängel, Trockenstress,
   Pilzbefall/Schädlinge, Mehltau-Anzeichen).
 - **🌿 Pflanzenfinder** – eine Seite für alles andere: Freitextsuche
-  (umlauttolerant) plus fünf kombinierbare Filter – Standort (Balkon/
+  (umlauttolerant) plus sieben kombinierbare Filter – Standort (Balkon/
   Garten/Zimmer/Badezimmer/Küche), Kategorie (Zier-/Gemüse-/Obstpflanzen/
-  Kräuter), Jahreszeit, Pflegeaufwand und Tierhaltung (z. B. „nur
-  katzensicher"). Der Filterstand landet in der URL und lässt sich so
-  teilen/mit Zurück-Button aufrufen.
+  Kräuter), Jahreszeit, Pflegeaufwand, Lichtbedarf, Wasserbedarf und
+  Tierhaltung (z. B. „nur katzensicher") – plus Sortierung (Name/
+  Pflegeaufwand) und ein Umschalter „Nur Merkliste". Der Filterstand
+  landet in der URL und lässt sich so teilen/mit Zurück-Button aufrufen.
+- **📄 Pflanzendetailseite** (`/pflanzen/:id`) – eigene, verlinkbare Seite
+  je Pflanze mit vollständigem Steckbrief, Pflegetipps, Tiersicherheit und
+  ähnlichen Pflanzen.
+- **♥ Merkliste** – Pflanzen lassen sich per Herz-Icon merken. Die Auswahl
+  wird rein clientseitig in `localStorage` gespeichert (kein Konto, kein
+  Backend) und bleibt auf diesem Gerät/Browser erhalten.
 
 `/` ist die Startseite, die Diagnose liegt unter `/diagnose`. Alte
 Direktlinks wie `/balkon`, `/garten`, `/zimmer`, `/gemuese`, `/tiere`,
 `/pflege` und `/suche` funktionieren weiterhin – sie leiten mit passend
 vorbelegten Filtern auf `/pflanzen` um.
+
+Die App ist als PWA installierbar (Manifest + Icons + Service Worker mit
+Stale-while-revalidate-Caching) – "Zum Startbildschirm hinzufügen" macht
+sie zu einer App-artigen Kachel, bereits besuchte Seiten funktionieren
+danach auch offline.
 
 ## Tech-Stack
 
@@ -62,6 +74,19 @@ Einschätzungen und ersetzen keine tierärztliche Beratung – bei
 Vergiftungsverdacht immer Tierarzt/Giftnotruf kontaktieren. Weitere
 Pflanzen lassen sich einfach als zusätzliche Einträge in dieser Datei
 ergänzen.
+
+## Bekannte Grenzen
+
+- **Keine echten Fotos.** Jede Pflanze hat aktuell nur ein Emoji-Icon statt
+  eines Fotos. Lizenzfreie Bilder für ~80 Pflanzen automatisiert zu
+  beschaffen war in dieser Entwicklungsumgebung nicht zuverlässig möglich
+  (externe Bildquellen sind netzwerkseitig nicht erreichbar). Am saubersten
+  ließe sich das nachrüsten, indem man pro Pflanze eine Bild-URL (z. B. zu
+  einem selbst gehosteten/lizenzierten Bild) im `image`-Feld ergänzt – das
+  Datenmodell ist dafür offen, `PlantCard`/`PlantDetailPage` müssten dann
+  nur noch das Bild statt des Emoji-Badges rendern.
+- Die Bild-**Diagnose** ist eine Heuristik, kein trainiertes Modell (siehe
+  oben).
 
 ## Design
 

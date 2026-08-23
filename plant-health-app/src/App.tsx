@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import HomePage from "./pages/HomePage";
 import DiagnosePage from "./pages/DiagnosePage";
 import PlantFinderPage from "./pages/PlantFinderPage";
+import PlantDetailPage from "./pages/PlantDetailPage";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/diagnose" element={<DiagnosePage />} />
           <Route path="/pflanzen" element={<PlantFinderPage />} />
+          <Route path="/pflanzen/:id" element={<PlantDetailPage />} />
 
           {/* Alte Einzelseiten sind im Pflanzenfinder aufgegangen – Links bleiben nutzbar. */}
           <Route path="/suche" element={<Navigate to="/pflanzen" replace />} />

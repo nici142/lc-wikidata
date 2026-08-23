@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Plant } from "../data/types";
 import {
   DIFFICULTY_LABELS,
@@ -5,6 +6,7 @@ import {
   SEASON_LABELS,
   TOXICITY_LABELS,
 } from "../data/types";
+import { useFavorites } from "../hooks/useFavorites";
 
 const difficultyDot: Record<Plant["difficulty"], string> = {
   einfach: "bg-leaf-500",
@@ -20,30 +22,54 @@ const toxicityColor: Record<string, string> = {
 
 export default function PlantCard({ plant }: { plant: Plant }) {
   const petSafe = plant.toxicity.cats === "ungiftig" && plant.toxicity.dogs === "ungiftig";
+  const { isFavorite, toggleFavorite } = useFavorites();
+  const favorite = isFavorite(plant.id);
 
   return (
     <article className="group flex flex-col gap-3 rounded-2xl border border-bark-200/70 bg-white/90 p-4 shadow-[0_1px_2px_rgba(43,39,30,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:border-leaf-200 hover:shadow-[0_12px_24px_-12px_rgba(43,39,30,0.18)]">
       <div className="flex items-start justify-between gap-2">
-        <div className="flex items-center gap-3">
+        <Link to={`/pflanzen/${plant.id}`} className="flex min-w-0 flex-1 items-center gap-3">
           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-leaf-50 text-2xl leading-none ring-1 ring-leaf-100">
             {plant.emoji}
           </span>
-          <div>
-            <h3 className="font-display text-[1.05rem] font-semibold leading-tight text-bark-900">
+          <div className="min-w-0">
+            <h3 className="truncate font-display text-[1.05rem] font-semibold leading-tight text-bark-900 group-hover:text-leaf-700">
               {plant.name}
             </h3>
-            <p className="text-xs italic text-bark-400">{plant.latinName}</p>
+            <p className="truncate text-xs italic text-bark-400">{plant.latinName}</p>
           </div>
-        </div>
-        {petSafe && (
-          <span
-            title="Unbedenklich für Katzen und Hunde"
-            className="shrink-0 rounded-full bg-leaf-100 px-2 py-1 text-[11px] font-medium text-leaf-700"
+        </Link>
+        <div className="flex shrink-0 items-center gap-1.5">
+          {petSafe && (
+            <span
+              title="Unbedenklich für Katzen und Hunde"
+              className="hidden shrink-0 rounded-full bg-leaf-100 px-2 py-1 text-[11px] font-medium text-leaf-700 sm:inline-block"
+            >
+              🐾 tierfreundlich
+            </span>
+          )}
+          <button
+            type="button"
+            onClick={() => toggleFavorite(plant.id)}
+            aria-pressed={favorite}
+            aria-label={favorite ? "Von Merkliste entfernen" : "Zur Merkliste hinzufügen"}
+            title={favorite ? "Von Merkliste entfernen" : "Zur Merkliste hinzufügen"}
+            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-base transition-colors ${
+              favorite
+                ? "bg-clay-100 text-clay-600"
+                : "bg-bark-100 text-bark-400 hover:bg-clay-50 hover:text-clay-500"
+            }`}
           >
-            🐾 tierfreundlich
-          </span>
-        )}
+            {favorite ? "♥" : "♡"}
+          </button>
+        </div>
       </div>
+
+      {petSafe && (
+        <span className="-mt-2 inline-block w-fit rounded-full bg-leaf-100 px-2 py-1 text-[11px] font-medium text-leaf-700 sm:hidden">
+          🐾 tierfreundlich
+        </span>
+      )}
 
       <p className="text-sm leading-relaxed text-bark-700">{plant.description}</p>
 
@@ -93,6 +119,14 @@ export default function PlantCard({ plant }: { plant: Plant }) {
           </p>
         )}
       </details>
+
+      <Link
+        to={`/pflanzen/${plant.id}`}
+        className="mt-auto inline-flex items-center gap-1 pt-1 text-xs font-medium text-leaf-700 hover:text-leaf-800"
+      >
+        Alle Details
+        <span aria-hidden>→</span>
+      </Link>
     </article>
   );
 }
