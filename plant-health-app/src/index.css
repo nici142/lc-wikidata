@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-leaf-50: #f1f8f0;
+  --color-leaf-100: #dcefd8;
+  --color-leaf-200: #b9e0b1;
+  --color-leaf-300: #8fcb83;
+  --color-leaf-400: #66b358;
+  --color-leaf-500: #47953a;
+  --color-leaf-600: #35762c;
+  --color-leaf-700: #2b5d25;
+  --color-leaf-800: #234a1f;
+  --color-leaf-900: #1c3c1a;
+  --color-bark-50: #faf8f4;
+  --color-bark-900: #2f2a22;
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-leaf-50);
+  color: var(--color-bark-900);
+}
