@@ -144,6 +144,30 @@ export default function PlantDetailPage() {
         </ul>
       </div>
 
+      {/* Substrat & Umtopfen */}
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="rounded-2xl border border-bark-200/70 bg-white/70 p-5">
+          <h2 className="flex items-center gap-2 font-display text-lg font-semibold text-bark-900">
+            <span aria-hidden>🪨</span> Substrat
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-bark-700">{plant.soil}</p>
+        </div>
+        <div className="rounded-2xl border border-bark-200/70 bg-white/70 p-5">
+          <h2 className="flex items-center gap-2 font-display text-lg font-semibold text-bark-900">
+            <span aria-hidden>🪴</span> Umtopfen
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-bark-700">{plant.repotting}</p>
+        </div>
+      </div>
+
+      {/* Pflege im Jahresverlauf */}
+      <div className="mt-4 rounded-2xl border border-bark-200/70 bg-white/70 p-5">
+        <h2 className="flex items-center gap-2 font-display text-lg font-semibold text-bark-900">
+          <span aria-hidden>🍂</span> Pflege im Jahresverlauf
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-bark-700">{plant.overwintering}</p>
+      </div>
+
       {/* Tiersicherheit */}
       <div className="mt-4 rounded-2xl border border-bark-200/70 bg-white/70 p-5">
         <h2 className="font-display text-lg font-semibold text-bark-900">Tiersicherheit</h2>

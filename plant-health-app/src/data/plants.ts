@@ -17,11 +17,15 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Durchlässige, nährstoffreiche Balkonpflanzenerde.",
     careTips: [
       "Verblühtes regelmäßig ausputzen für Dauerblüte",
       "Staunässe vermeiden, mag es eher trocken",
       "Alle 2 Wochen düngen in der Wachstumsphase",
     ],
+    repotting: "Jährlich im Frühjahr in frische Erde und bei Bedarf ein größeres Gefäß.",
+    overwintering:
+      "Nicht winterhart – hell und kühl (ca. 8–12 °C) frostfrei überwintern, dabei kaum gießen und nicht düngen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -39,11 +43,15 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Durchlässige Blumenerde mit guter Wasserspeicherung.",
     careTips: [
       "Täglich gießen an heißen Tagen",
       "Regelmäßig düngen für kräftige Blüte",
       "Verblühtes entfernen",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering:
+      "Frostempfindlich und einjährig – nach dem ersten Frost absterben lassen und im Frühjahr neu pflanzen.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -57,10 +65,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Normale, durchlässige Gartenerde.",
     careTips: [
       "Wenig anspruchsvoll, verträgt kurze Trockenphasen",
       "Fördert Nützlinge und vertreibt Nematoden im Boden",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Nicht winterhart – stirbt mit dem ersten Frost ab, im Frühjahr neu aussäen.",
     toxicity: {
       cats: "leicht_giftig",
       dogs: "leicht_giftig",
@@ -78,10 +89,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Durchlässige, humose Blumenerde.",
     careTips: [
       "Verträgt leichten Frost problemlos",
       "Regelmäßig ausputzen verlängert die Blütezeit",
     ],
+    repotting: "Meist ein- bis zweijährig kultiviert; bei mehrjähriger Pflege alle 1–2 Jahre umtopfen.",
+    overwintering: "Winterhart – übersteht Frost im Kübel oder Beet problemlos, im Winter nur mäßig gießen.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -95,10 +109,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Durchlässige, nährstoffreiche Blumenerde.",
     careTips: [
       "Ideal für Kübel und Beete in der kühleren Jahreszeit",
       "Mäßig gießen, keine Staunässe",
     ],
+    repotting: "Meist einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Frosttolerant – übersteht auch strenge Kälte im Kübel, benötigt im Winter kaum Wasser.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -112,10 +129,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Nährstoffreiche, durchlässige Blumenerde.",
     careTips: [
       "Regelmäßig gießen, aber Staunässe vermeiden",
       "Leichten Frost verträgt sie, bei starkem Frost schützen",
     ],
+    repotting: "Bei mehrjähriger Kultur alle 1–2 Jahre im Frühjahr umtopfen.",
+    overwintering:
+      "Leichten Frost verträgt sie im Kübel; bei strengem Frost hell und kühl (5–10 °C) frostfrei überwintern oder ins Beet setzen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -133,10 +154,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "wenig",
+    soil: "Saure, torfige Moorbeeterde (Rhododendronerde).",
     careTips: [
       "Mag saure, durchlässige Erde",
       "Sehr trockenheits- und frostverträglich",
     ],
+    repotting: "Alle 2 Jahre im Frühjahr, wächst langsam.",
+    overwintering: "Winterhart – kann ganzjährig draußen bleiben, im Kübel vor Austrocknung bei Frost schützen.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -150,10 +174,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Kalkhaltiger, humoser, durchlässiger Boden.",
     careTips: [
       "Halbschattigen, geschützten Standort wählen",
       "Nach der Blüte kaum Pflegeaufwand",
     ],
+    repotting: "Nur bei Bedarf, meist alle 3–4 Jahre – mag Standorttreue.",
+    overwintering: "Winterhart und blüht sogar im Schnee – kein besonderer Winterschutz nötig.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -171,10 +198,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Durchlässige, humusreiche Blumenerde.",
     careTips: [
       "Kühle Temperaturen bevorzugt (8–15 °C)",
       "Von unten gießen, Knolle nicht nass machen",
     ],
+    repotting: "Jährlich nach der Sommerruhe, in nur leicht größere Gefäße.",
+    overwintering:
+      "Blüht im Winter bei kühlen 8–15 °C; nach der Blüte im Frühjahr zieht die Knolle ein und braucht eine trockene Sommerruhe.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -192,11 +223,15 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "wenig",
+    soil: "Durchlässige, kalkhaltige, eher magere Erde (z. B. mit Sand gemischt).",
     careTips: [
       "Durchlässigen, eher kargen Boden verwenden",
       "Nach der Blüte zurückschneiden",
       "Übersteht Trockenheit gut, Staunässe vermeiden",
     ],
+    repotting: "Alle 2–3 Jahre im Frühjahr, wächst als Halbstrauch langsam.",
+    overwintering:
+      "Winterhart im Beet; im Kübel den Wurzelballen vor Frost schützen (z. B. mit Vlies) und mäßig weitergießen.",
     toxicity: {
       cats: "leicht_giftig",
       dogs: "leicht_giftig",
@@ -214,7 +249,11 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "wenig",
+    soil: "Durchlässige, kalkhaltige, magere Kräutererde.",
     careTips: ["Sonnigen, warmen Standort wählen", "Sparsam gießen, keine Staunässe"],
+    repotting: "Alle 2 Jahre im Frühjahr.",
+    overwintering:
+      "Nicht zuverlässig winterhart – hell und kühl (5–10 °C) überwintern oder im Beet mit Vlies/Reisig schützen; im Winter sparsam gießen.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "kraeuter",
   },
@@ -229,11 +268,15 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Nährstoffreiche, durchlässige Kräuter-/Gemüseerde.",
     careTips: [
       "Keine Kälte unter 10 °C",
       "Regelmäßig ernten fördert buschigen Wuchs",
       "Von unten gießen, Blätter trocken halten",
     ],
+    repotting: "Einjährig kultiviert; nach dem Kauf bei Bedarf einmal in ein größeres Gefäß umtopfen.",
+    overwintering:
+      "Sehr kälteempfindlich (unter 10 °C) und nicht winterhart – wird meist einjährig kultiviert und endet im Herbst mit dem ersten Kälteeinbruch; am hellen, warmen Fensterbrett mit Zusatzlicht auch im Winter möglich.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "kraeuter",
   },
@@ -248,7 +291,10 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "wenig",
+    soil: "Durchlässige, magere, kalkhaltige Erde.",
     careTips: ["Durchlässige Erde bevorzugt", "Übersteht Trockenphasen problemlos"],
+    repotting: "Alle 2–3 Jahre im Frühjahr.",
+    overwintering: "Winterhart – kann ganzjährig draußen bleiben, im Kübel vor Staunässe durch Regen/Schnee schützen.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "kraeuter",
   },
@@ -263,10 +309,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Normale, humusreiche Gartenerde oder Blumenerde.",
     careTips: [
       "Sehr pflegeleicht und winterhart",
       "Verträgt auch schattigere Standorte",
     ],
+    repotting: "Alle 2 Jahre im Frühjahr, wächst zügig.",
+    overwintering: "Voll winterhart – bleibt ganzjährig grün und braucht keinen besonderen Winterschutz.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -284,10 +333,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Nährstoffreicher, durchlässiger, kalkhaltiger Boden.",
     careTips: [
       "Regelmäßiger Formschnitt im Frühjahr/Sommer",
       "Auf Buchsbaumzünsler und Pilzbefall achten",
     ],
+    repotting: "Kübelpflanzen alle 2–3 Jahre umtopfen, im Beet nicht nötig.",
+    overwintering:
+      "Winterhart; im Kübel den Wurzelballen vor Frost und die Blätter vor Wintersonne (Verbrennungsgefahr) schützen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -305,11 +358,15 @@ export const plants: Plant[] = [
     difficulty: "anspruchsvoll",
     sunlight: "sonne",
     watering: "viel",
+    soil: "Nährstoffreiche, durchlässige Kübelpflanzenerde.",
     careTips: [
       "Frostfrei überwintern",
       "Braucht viel Wasser und Nährstoffe im Sommer",
       "Nicht in Reichweite von Kindern oder Haustieren aufstellen",
     ],
+    repotting: "Junge Pflanzen jährlich, ältere alle 2–3 Jahre im Frühjahr.",
+    overwintering:
+      "Nicht winterhart – hell und kühl (2–10 °C) frostfrei überwintern, dabei deutlich weniger gießen und nicht düngen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -327,10 +384,14 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "wenig",
+    soil: "Durchlässige Kakteen-/Sukkulentenerde mit hohem Sandanteil.",
     careTips: [
       "Nur wenig gießen, Staunässe unbedingt vermeiden",
       "Ab Herbst wieder ins Haus holen",
     ],
+    repotting: "Alle 2–3 Jahre oder sobald Ableger das Gefäß sprengen.",
+    overwintering:
+      "Nicht winterhart – ab Herbst zurück ins helle Zimmer holen, im Winter nur sehr wenig gießen (Ruhephase).",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -348,10 +409,14 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Normale, durchlässige Gartenerde.",
     careTips: [
       "Sät sich häufig von selbst aus",
       "Regelmäßiges Ausputzen fördert Nachblüte",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering:
+      "Nicht winterhart – stirbt mit dem Frost ab, sät sich aber oft von selbst für das nächste Jahr aus.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -365,10 +430,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Magere bis normale, durchlässige Erde.",
     careTips: [
       "Mag eher magere Erde – zu viel Dünger geht auf Kosten der Blüte",
       "Wächst schnell und rankt gerne",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Frostempfindlich und einjährig – wird im Herbst vom ersten Frost beendet.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -382,10 +450,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "wenig",
+    soil: "Durchlässige, eher magere Erde, gerne mit Sand/Kies gemischt.",
     careTips: [
       "Kommt mit sehr wenig Wasser aus",
       "Winterhart, kein besonderer Schutz nötig",
     ],
+    repotting: "Alle 3–4 Jahre, wächst sehr langsam.",
+    overwintering: "Voll winterhart, kein Schutz nötig – zieht im Winter die oberirdischen Teile teilweise ein.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -399,10 +470,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "halbschatten",
     watering: "viel",
+    soil: "Saure, humusreiche Rhododendron-/Moorbeeterde.",
     careTips: [
       "Braucht viel Wasser, besonders an heißen Tagen",
       "Halbschatten schützt vor Blattverbrennung",
     ],
+    repotting: "Alle 2 Jahre im zeitigen Frühjahr.",
+    overwintering:
+      "Meist winterhart im Beet (Knospen ggf. mit Vlies schützen); im Kübel den Wurzelballen frostfrei halten, da er schneller durchfriert als im Beet.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -420,10 +495,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Durchlässige, nährstoffreiche Kübelpflanzenerde.",
     careTips: [
       "Warme, geschützte Lage bevorzugt",
       "Frostfrei und hell überwintern",
     ],
+    repotting: "Jährlich im Frühjahr.",
+    overwintering: "Nicht winterhart – hell bei 12–15 °C frostfrei überwintern, im Winter deutlich weniger gießen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -441,10 +519,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Durchlässige, nährstoffreiche Blumenerde.",
     careTips: [
       "Regelmäßig düngen für Dauerblüte",
       "Gleichmäßig feucht halten",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Nicht winterhart – einjährig kultiviert, endet mit dem ersten Frost.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -458,10 +539,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Normaler, durchlässiger, humoser Gartenboden.",
     careTips: [
       "Nach der Blüte auslichten statt stark zurückschneiden",
       "Verträgt die meisten Bodenarten",
     ],
+    repotting: "Im Beet nicht nötig, Kübelpflanzen alle 2–3 Jahre.",
+    overwintering: "Winterhart, kein besonderer Schutz nötig.",
     toxicity: {
       cats: "leicht_giftig",
       dogs: "leicht_giftig",
@@ -479,10 +563,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Normale bis nährstoffreiche Gartenerde, sehr anpassungsfähig.",
     careTips: [
       "Direkt nach der Blüte schneiden",
       "Sehr anpassungsfähig an verschiedene Böden",
     ],
+    repotting: "Im Beet nicht nötig.",
+    overwintering: "Voll winterhart, kein Schutz nötig.",
     toxicity: {
       cats: "ungiftig",
       dogs: "ungiftig",
@@ -500,10 +587,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "wenig",
+    soil: "Durchlässige, eher sandige Erde.",
     careTips: [
       "Zwiebeln im Herbst pflanzen",
       "Nach der Blüte Laub abwelken lassen, nicht abschneiden",
     ],
+    repotting: "Zwiebeln bleiben mehrere Jahre stehen, bei dichtem Wuchs im Sommer teilen und neu setzen.",
+    overwintering: "Winterhart – Zwiebeln bleiben im Boden und treiben im nächsten Frühjahr wieder aus.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -521,10 +611,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Durchlässige, humose Erde.",
     careTips: [
       "Zwiebeln im Herbst setzen",
       "Nach der Blüte nicht zu früh zurückschneiden",
     ],
+    repotting: "Zwiebeln können mehrere Jahre stehen bleiben, bei Bedarf nach dem Einziehen des Laubs teilen.",
+    overwintering: "Winterhart – Zwiebeln überdauern den Winter im Boden.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -542,10 +635,14 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Durchlässige, humose Erde, keine Staunässe.",
     careTips: [
       "Zwiebeln im Herbst frostfrei pflanzen",
       "Nach dem Verblühen Laub einziehen lassen",
     ],
+    repotting: "Zwiebeln je nach Sorte jährlich oder alle paar Jahre neu setzen.",
+    overwintering:
+      "Winterhart – Zwiebeln bleiben frostfrei im Boden, in Kübeln vor Staunässe durch Winterregen schützen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -563,7 +660,10 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Normale, durchlässige Erde.",
     careTips: ["Sehr pflegeleicht", "Verträgt auch kühlere Temperaturen gut"],
+    repotting: "Meist zweijährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Winterhart, kein Schutz nötig.",
     toxicity: {
       cats: "ungiftig",
       dogs: "ungiftig",
@@ -581,10 +681,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "viel",
+    soil: "Normale, feuchtigkeitsspeichernde Blumenerde.",
     careTips: [
       "Mag es gleichmäßig feucht, verträgt sogar Staunässe kurzzeitig",
       "Ideal als sichere Knabberpflanze für Katzen",
     ],
+    repotting: "Jährlich im Frühjahr, wächst zügig.",
+    overwintering: "Nicht winterhart – ab Herbst ins helle Zimmer holen, drinnen ganzjährig gleichmäßig feucht halten.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -598,10 +701,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Normale, durchlässige Blumenerde.",
     careTips: [
       "Verzeiht auch mal vergessenes Gießen",
       "Bildet zahlreiche Ableger zum Vermehren",
     ],
+    repotting: "Alle 1–2 Jahre, sobald Wurzeln aus dem Topf wachsen.",
+    overwintering: "Nicht winterhart – ganzjährig als Zimmerpflanze kultivieren, im Winter seltener gießen.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -615,10 +721,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Feuchter, nährstoffreicher, humoser Boden.",
     careTips: [
       "Bevorzugt feuchte, nährstoffreiche Böden",
       "Zieht Katzen und Bestäuber gleichermaßen an",
     ],
+    repotting: "Im Beet nicht nötig, Kübelpflanzen alle 2 Jahre.",
+    overwintering: "Winterhart – zieht im Herbst ein und treibt im Frühjahr neu aus.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -632,10 +741,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "halbschatten",
     watering: "viel",
+    soil: "Humusreiche, durchlässige Blumenerde.",
     careTips: [
       "Verträgt keine pralle Mittagssonne",
       "Gleichmäßig feucht halten, nicht austrocknen lassen",
     ],
+    repotting: "Jährlich im Frühjahr.",
+    overwintering:
+      "Meist nicht winterhart – hell und kühl (5–10 °C) überwintern, dabei stark reduziert gießen; einzelne Sorten sind bedingt winterhart im Beet mit dickem Winterschutz.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -649,10 +762,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Normale, durchlässige Zimmerpflanzenerde.",
     careTips: [
       "Verzeiht auch mal unregelmäßiges Gießen",
       "Regelmäßig stutzen für buschigen Wuchs",
     ],
+    repotting: "Alle 2 Jahre im Frühjahr.",
+    overwintering: "Ganzjährig gleichbleibende Zimmertemperatur ideal, im Winter seltener gießen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -670,11 +786,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Durchlässige, humusreiche Zimmerpflanzenerde, gerne mit Kokosfasern/Perlite aufgelockert.",
     careTips: [
       "Helle Standorte ohne pralle Sonne bevorzugt",
       "Luftwurzeln können in Wasser oder Erde geleitet werden",
       "Zwischen den Wassergaben leicht antrocknen lassen",
     ],
+    repotting: "Junge Pflanzen jährlich, ältere alle 2–3 Jahre im Frühjahr.",
+    overwintering: "Ganzjährig als Zimmerpflanze bei stabilen Temperaturen, im Winter seltener gießen und nicht düngen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -692,10 +811,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "schatten",
     watering: "wenig",
+    soil: "Durchlässige Kakteen-/Sukkulentenerde.",
     careTips: [
       "Sehr genügsam, seltenes Gießen reicht völlig aus",
       "Staunässe unbedingt vermeiden",
     ],
+    repotting: "Nur alle 3–4 Jahre, wächst langsam und mag es eng im Topf.",
+    overwintering: "Ganzjährig als Zimmerpflanze, im Winter kaum gießen.",
     toxicity: {
       cats: "leicht_giftig",
       dogs: "leicht_giftig",
@@ -713,10 +835,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "schatten",
     watering: "wenig",
+    soil: "Durchlässige, lockere Kakteen- oder Zimmerpflanzenerde.",
     careTips: [
       "Übersteht auch längere Trockenphasen problemlos",
       "Wenig Licht ist kein Problem",
     ],
+    repotting: "Alle 2–3 Jahre.",
+    overwintering: "Ganzjährig als Zimmerpflanze, im Winter deutlich seltener gießen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -734,10 +859,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Normale, durchlässige Zimmerpflanzenerde.",
     careTips: [
       "Zwischen den Wassergaben antrocknen lassen",
       "Verträgt auch etwas dunklere Standorte",
     ],
+    repotting: "Alle 2 Jahre im Frühjahr.",
+    overwintering: "Ganzjährig als Zimmerpflanze bei Temperaturen über 15 °C, im Winter seltener gießen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -755,10 +883,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Durchlässige, humusreiche Zimmerpflanzenerde.",
     careTips: [
       "Mag konstante Bedingungen, reagiert empfindlich auf Standortwechsel",
       "Milchsaft kann bei empfindlicher Haut reizen – beim Schneiden Handschuhe tragen",
     ],
+    repotting: "Alle 2 Jahre im Frühjahr, mag Standorttreue.",
+    overwintering:
+      "Ganzjährig als Zimmerpflanze bei konstanten Bedingungen, im Winter seltener gießen, Zugluft und Heizungsnähe vermeiden.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -776,10 +908,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Durchlässige, humusreiche Zimmerpflanzenerde.",
     careTips: [
       "Gleichmäßig feucht, aber nicht nass halten",
       "Freut sich über hohe Luftfeuchtigkeit",
     ],
+    repotting: "Alle 2 Jahre im Frühjahr.",
+    overwintering: "Ganzjährig als Zimmerpflanze, im Winter seltener gießen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -797,10 +932,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "halbschatten",
     watering: "wenig",
+    soil: "Spezielle grobe Orchideenerde (Rinde/Kokos) – keine normale Blumenerde.",
     careTips: [
       "Nur tauchen/gießen, wenn die Wurzeln silbrig-grau statt grün sind",
       "Helles, aber sonnengeschütztes Fensterbrett bevorzugt",
     ],
+    repotting: "Alle 2 Jahre oder sobald das Substrat zerfällt, meist direkt nach der Blüte.",
+    overwintering: "Ganzjährig als Zimmerpflanze, kühlere Nächte im Winter fördern oft die nächste Blüte.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -814,10 +952,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Durchlässige, humusreiche Palmenerde.",
     careTips: [
       "Gleichmäßig feucht halten, Staunässe vermeiden",
       "Vor Zugluft und praller Mittagssonne schützen",
     ],
+    repotting: "Alle 2–3 Jahre, wächst langsam.",
+    overwintering: "Ganzjährig als Zimmerpflanze, im Winter seltener gießen und Zugluft vermeiden.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -831,10 +972,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Durchlässige, humusreiche Palmenerde.",
     careTips: [
       "Hohe Luftfeuchtigkeit fördert gesundes Wachstum",
       "Regelmäßig, aber mäßig gießen",
     ],
+    repotting: "Alle 2 Jahre im Frühjahr.",
+    overwintering: "Ganzjährig als Zimmerpflanze bei Temperaturen über 16 °C, im Winter seltener gießen.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -848,10 +992,14 @@ export const plants: Plant[] = [
     difficulty: "anspruchsvoll",
     sunlight: "schatten",
     watering: "viel",
+    soil: "Durchlässige, humusreiche, torfarme Zimmerpflanzenerde.",
     careTips: [
       "Hohe Luftfeuchtigkeit und kalkarmes Wasser bevorzugt",
       "Keine direkte Sonne, verträgt aber wenig Licht nicht dauerhaft",
     ],
+    repotting: "Jährlich im Frühjahr, mag frisches Substrat.",
+    overwintering:
+      "Ganzjährig als Zimmerpflanze bei warmen, gleichbleibenden Temperaturen, im Winter vor Heizungsluft und Zugluft schützen.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
   {
@@ -865,10 +1013,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "wenig",
+    soil: "Durchlässige, leichte Zimmerpflanzenerde.",
     careTips: [
       "Speichert Wasser in den Blättern – lieber zu wenig als zu viel gießen",
       "Verzeiht kleinere Pflegefehler gut",
     ],
+    repotting: "Alle 2 Jahre, wächst kompakt.",
+    overwintering: "Ganzjährig als Zimmerpflanze, im Winter seltener gießen.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
 
@@ -884,11 +1035,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "viel",
+    soil: "Nährstoffreiche Tomaten-/Gemüseerde.",
     careTips: [
       "Regelmäßig und gleichmäßig gießen, um Fruchtplatzer zu vermeiden",
       "Ausgeizen (Seitentriebe entfernen) fördert die Fruchtbildung",
       "Regenschutz beugt Braunfäule vor",
     ],
+    repotting: "Einjährig kultiviert; Jungpflanzen bei Bedarf einmal in größere Kübel umtopfen.",
+    overwintering: "Einjährig und frostempfindlich – endet mit dem ersten Frost, im Frühjahr neu pflanzen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -907,10 +1061,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Nährstoffreiche, durchlässige Gemüseerde.",
     careTips: [
       "Warmen, windgeschützten Standort wählen",
       "Regelmäßig düngen für reichen Fruchtansatz",
     ],
+    repotting: "Jungpflanzen im Frühjahr einmal in größere Kübel umtopfen.",
+    overwintering:
+      "Frostempfindlich; einjährig kultivierte Pflanzen sterben ab, mehrjährige Chilisorten lassen sich hell und warm (über 15 °C) überwintern.",
     toxicity: {
       cats: "leicht_giftig",
       dogs: "leicht_giftig",
@@ -929,10 +1087,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Lockere, steinfreie Gemüseerde.",
     careTips: [
       "Gleichmäßig feucht halten, sonst werden sie scharf und holzig",
       "Auch in flachen Balkonkästen gut möglich",
     ],
+    repotting: "Kurzlebig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Nicht winterhart – wird meist im gleichen Jahr geerntet, keine Überwinterung nötig.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "gemuese",
   },
@@ -947,10 +1108,14 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Nährstoffreiche, humose Gemüseerde.",
     careTips: [
       "Regelmäßig, aber mäßig gießen",
       "Äußere Blätter ernten, Herz stehen lassen für Nachwuchs",
     ],
+    repotting: "Kurzlebig kultiviert, kein Umtopfen nötig.",
+    overwintering:
+      "Nicht frosthart genug für den Winter draußen – wird meist bis zum Herbst beerntet und im Frühjahr neu ausgesät.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "gemuese",
   },
@@ -965,10 +1130,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Normale, durchlässige Gemüseerde.",
     careTips: [
       "Rankhilfe von Anfang an bereitstellen",
       "Regelmäßig ernten regt Nachbildung an",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Frostempfindlich – einjährig kultiviert, endet mit dem ersten Frost.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "gemuese",
   },
@@ -983,10 +1151,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Nährstoffreiche, durchlässige Gemüseerde.",
     careTips: [
       "Erst nach den Eisheiligen aussäen, frostempfindlich",
       "Regelmäßig ernten für längere Erntezeit",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Sehr frostempfindlich – einjährig kultiviert, endet spätestens mit dem ersten Frost.",
     toxicity: {
       cats: "ungiftig",
       dogs: "ungiftig",
@@ -1005,10 +1176,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Lockere, steinfreie, sandige Erde.",
     careTips: [
       "Mindestens 25–30 cm tiefes Gefäß verwenden",
       "Erde locker und steinfrei halten",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Nicht winterhart – wird im gleichen Jahr geerntet.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "gemuese",
   },
@@ -1023,10 +1197,14 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Nährstoffreiche, humose, leicht saure Beerenerde.",
     careTips: [
       "Ausläufer regelmäßig entfernen oder zur Vermehrung nutzen",
       "Mulchen hält die Früchte sauber und trocken",
     ],
+    repotting: "Alle 2–3 Jahre umtopfen bzw. Pflanzen erneuern, da der Ertrag mit dem Alter nachlässt.",
+    overwintering:
+      "Winterhart – zieht im Herbst ein, Kübel vor komplettem Durchfrieren schützen (z. B. an die Hauswand stellen).",
     toxicity: {
       cats: "ungiftig",
       dogs: "ungiftig",
@@ -1045,10 +1223,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Lockerer, humoser, durchlässiger Boden ohne Staunässe.",
     careTips: [
       "Pflanzen regelmäßig anhäufeln",
       "Ausreichend Reihenabstand für gute Knollenbildung einplanen",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Frostempfindlich – das Laub stirbt im Herbst ab, Knollen werden vor dem ersten Frost geerntet.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -1067,10 +1248,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "viel",
+    soil: "Sehr nährstoffreicher, humoser Boden (mag frischen Kompost).",
     careTips: [
       "Viel Platz und einen nährstoffreichen Boden einplanen",
       "Regelmäßig und reichlich gießen, besonders bei Fruchtbildung",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Frostempfindlich – einjährig kultiviert, Ernte erfolgt vor dem ersten Frost.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "gemuese",
   },
@@ -1085,10 +1269,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "viel",
+    soil: "Sehr nährstoffreicher, humoser Boden.",
     careTips: [
       "Mindestens 1 m² Standraum pro Pflanze einplanen",
       "Regelmäßig ernten, solange die Früchte noch klein sind",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Frostempfindlich – einjährig kultiviert, endet mit dem ersten Frost.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "gemuese",
   },
@@ -1103,10 +1290,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Nährstoffreicher, durchlässiger Boden.",
     careTips: [
       "In mehreren Reihen als Block statt einzeln pflanzen",
       "Windgeschützten Standort wählen",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Frostempfindlich – einjährig kultiviert, Ernte erfolgt vor dem ersten Frost.",
     toxicity: {
       cats: "ungiftig",
       dogs: "ungiftig",
@@ -1125,10 +1315,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "viel",
+    soil: "Schwerer, nährstoffreicher, kalkhaltiger Boden.",
     careTips: [
       "Nährstoffreichen Boden und weiten Pflanzabstand einplanen",
       "Mit Kulturschutznetz vor Kohlweißling schützen",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering:
+      "Je nach Sorte frosttolerant (Grünkohl wird durch Frost sogar süßer); Sommersorten werden vor stärkerem Frost geerntet.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "gemuese",
   },
@@ -1143,10 +1337,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "viel",
+    soil: "Nährstoffreicher, humoser, warmer Boden.",
     careTips: [
       "Stabiles Rankgerüst bereitstellen",
       "Gleichmäßig feucht halten, sonst schmecken die Früchte bitter",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Sehr frostempfindlich – einjährig kultiviert, endet mit dem ersten Frost.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "gemuese",
   },
@@ -1161,10 +1358,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Tiefgründiger, lockerer, nährstoffreicher Boden.",
     careTips: [
       "Reihenabstand von ca. 30 cm einhalten",
       "Boden tiefgründig lockern für gute Knollenbildung",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Nicht winterhart – wird vor dem ersten Frost geerntet und eingelagert.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "gemuese",
   },
@@ -1179,10 +1379,14 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "wenig",
+    soil: "Lockerer, durchlässiger, nährstoffarmer bis mittlerer Boden.",
     careTips: [
       "Unkrautfrei halten, Zwiebeln mögen keine Konkurrenz",
       "Vor der Ernte das Laub natürlich abtrocknen lassen",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering:
+      "Als Steckzwiebeln für die Ernte im Folgejahr winterhart im Boden; zum Verzehr bestimmte Zwiebeln werden vor dem Winter geerntet und trocken gelagert.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -1201,10 +1405,13 @@ export const plants: Plant[] = [
     difficulty: "anspruchsvoll",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Tiefgründiger, sandiger, durchlässiger Boden ohne Staunässe.",
     careTips: [
       "Tiefgründiges, dauerhaft freigehaltenes Beet einplanen",
       "Geduld mitbringen – erst ab dem 3. Jahr voll erntereif",
     ],
+    repotting: "Mehrjährige Dauerkultur im Beet, kein Umtopfen.",
+    overwintering: "Winterhart – das Kraut stirbt im Herbst oberirdisch ab und treibt im Frühjahr aus der Wurzel neu aus.",
     toxicity: {
       cats: "leicht_giftig",
       dogs: "leicht_giftig",
@@ -1225,10 +1432,14 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Nährstoffreiche, humose Kräutererde.",
     careTips: [
       "Gleichmäßig feucht halten, mag keine Staunässe",
       "Äußere Stiele ernten, damit die Mitte nachwächst",
     ],
+    repotting: "Zweijährig kultiviert, meist kein Umtopfen nötig.",
+    overwintering:
+      "Frosttolerant im ersten Winter, blüht im zweiten Jahr und wird danach ungenießbar – am besten jährlich neu aussäen.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "kraeuter",
   },
@@ -1243,10 +1454,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Nährstoffreiche, humose Erde.",
     careTips: [
       "Regelmäßig schneiden regt neuen Austrieb an",
       "Verträgt auch kühlere, halbschattige Standorte",
     ],
+    repotting: "Alle 2–3 Jahre teilen und neu setzen, sonst verkahlt die Mitte.",
+    overwintering: "Winterhart – zieht im Herbst ein und treibt im Frühjahr wieder aus.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -1265,10 +1479,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "viel",
+    soil: "Feuchtigkeitsspeichernde, nährstoffreiche Erde.",
     careTips: [
       "Im eigenen Topf kultivieren, sonst überwuchert sie das Beet",
       "Regelmäßig gießen, mag es nicht zu trocken",
     ],
+    repotting: "Jährlich im Frühjahr, wächst sehr stark.",
+    overwintering: "Winterhart – zieht im Herbst ein und treibt im Frühjahr aus dem Wurzelstock neu aus.",
     toxicity: {
       cats: "ungiftig",
       dogs: "ungiftig",
@@ -1287,10 +1504,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "wenig",
+    soil: "Durchlässige, magere, kalkhaltige Erde.",
     careTips: [
       "Durchlässige, eher magere Erde bevorzugt",
       "Vor der Blüte ernten für das intensivste Aroma",
     ],
+    repotting: "Alle 2–3 Jahre im Frühjahr.",
+    overwintering: "Winterhart im Beet; Kübel an einem geschützten Platz überwintern, im Winter kaum gießen.",
     toxicity: {
       cats: "leicht_giftig",
       dogs: "leicht_giftig",
@@ -1309,10 +1529,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Nährstoffreiche, lockere Erde.",
     careTips: [
       "Windgeschützten Standort wählen, wird schnell hoch",
       "Alle paar Wochen nachsäen für durchgehende Ernte",
     ],
+    repotting: "Einjährig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Nicht winterhart – einjährig kultiviert, endet mit dem ersten Frost.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "kraeuter",
   },
@@ -1327,10 +1550,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Durchlässige, nährstoffreiche Erde.",
     careTips: [
       "Kühlere Standorte verzögern das vorzeitige Schießen",
       "Regelmäßig nachsäen für frische Blätter",
     ],
+    repotting: "Kurzlebig kultiviert, kein Umtopfen nötig.",
+    overwintering: "Nicht winterhart – einjährig kultiviert, endet mit dem ersten Frost.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "kraeuter",
   },
@@ -1345,10 +1571,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "sonne",
     watering: "wenig",
+    soil: "Durchlässige, magere, kalkhaltige Erde.",
     careTips: [
       "Durchlässigen Boden bevorzugt, keine Staunässe",
       "Im Frühjahr zurückschneiden hält ihn kompakt",
     ],
+    repotting: "Alle 2–3 Jahre im Frühjahr.",
+    overwintering: "Winterhart im Beet an geschütztem Standort; Kübel an einer geschützten Stelle überwintern.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "kraeuter",
   },
@@ -1363,10 +1592,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Normale, humose Erde.",
     careTips: [
       "Regelmäßig zurückschneiden hält sie kompakt",
       "Verträgt auch halbschattige Standorte gut",
     ],
+    repotting: "Alle 2 Jahre teilen und neu setzen.",
+    overwintering: "Winterhart – zieht im Herbst ein und treibt im Frühjahr wieder aus.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "kraeuter",
   },
@@ -1383,10 +1615,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "viel",
+    soil: "Saure, torfige Moorbeeterde (Rhododendronerde), niemals normale Blumenerde.",
     careTips: [
       "Saure, torfige Spezialerde (Moorbeeterde) verwenden",
       "Gleichmäßig feucht halten, am besten mit Regenwasser gießen",
     ],
+    repotting: "Alle 2–3 Jahre in frische saure Erde.",
+    overwintering:
+      "Winterhart – verliert im Herbst die Blätter, Kübel vor komplettem Durchfrieren des Wurzelballens schützen.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "obst",
   },
@@ -1401,10 +1637,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "viel",
+    soil: "Nährstoffreicher, humoser, leicht saurer Boden.",
     careTips: [
       "Rankhilfe oder Spalier bereitstellen",
       "Nach der Ernte abgetragene Ruten bodennah zurückschneiden",
     ],
+    repotting: "Alle 2–3 Jahre bzw. Ruten regelmäßig auslichten.",
+    overwintering:
+      "Winterhart – oberirdische Ruten sterben nach der Ernte bzw. nach zwei Jahren ab, der Wurzelstock übersteht den Winter.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "obst",
   },
@@ -1419,10 +1659,13 @@ export const plants: Plant[] = [
     difficulty: "einfach",
     sunlight: "halbschatten",
     watering: "mittel",
+    soil: "Nährstoffreicher, humoser Boden.",
     careTips: [
       "Nach der Ernte auslichten fördert die Fruchtbildung im nächsten Jahr",
       "Verträgt auch halbschattige Standorte gut",
     ],
+    repotting: "Kübelpflanzen alle 2–3 Jahre.",
+    overwintering: "Winterhart, kein besonderer Schutz nötig, verliert im Herbst die Blätter.",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
     category: "obst",
   },
@@ -1437,10 +1680,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Nährstoffreiche, durchlässige Kübelpflanzenerde.",
     careTips: [
       "Großen, standfesten Kübel mit gutem Wasserabzug verwenden",
       "Regelmäßig düngen während der Wachstumsphase",
     ],
+    repotting: "Alle 2–3 Jahre im Frühjahr, in nur wenig größere Gefäße.",
+    overwintering:
+      "Winterhart – verliert im Herbst die Blätter, Kübel vor dem kompletten Durchfrieren des Wurzelballens schützen (z. B. Ummantelung, geschützter Platz).",
     toxicity: {
       cats: "leicht_giftig",
       dogs: "leicht_giftig",
@@ -1459,10 +1706,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Nährstoffreiche, durchlässige Kübelpflanzenerde.",
     careTips: [
       "Großen Kübel mit stabilem Stand wählen",
       "Vor Vogelfraß ggf. mit einem Netz schützen",
     ],
+    repotting: "Alle 2–3 Jahre im Frühjahr.",
+    overwintering:
+      "Winterhart – verliert im Herbst die Blätter, Kübel vor dem kompletten Durchfrieren des Wurzelballens schützen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -1481,10 +1732,14 @@ export const plants: Plant[] = [
     difficulty: "anspruchsvoll",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Spezielle durchlässige Zitrus-/Kübelpflanzenerde.",
     careTips: [
       "Hell und kühl (5–10 °C) überwintern",
       "Regelmäßig mit Zitrusdünger versorgen",
     ],
+    repotting: "Junge Pflanzen alle 2 Jahre, ältere alle 3–4 Jahre im Frühjahr.",
+    overwintering:
+      "Nicht winterhart – ab Herbst hell und kühl (5–10 °C) ins Winterquartier holen, dabei deutlich weniger gießen und nicht düngen; im Frühjahr langsam wieder an die Sonne gewöhnen.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -1503,10 +1758,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Nährstoffreiche, durchlässige Kübelpflanzenerde.",
     careTips: [
       "Frostfrei, aber kühl überwintern",
       "Im Winter deutlich weniger gießen",
     ],
+    repotting: "Alle 2–3 Jahre im Frühjahr.",
+    overwintering:
+      "Bedingt winterhart – kühl und frostfrei (0–10 °C) überwintern, verliert dabei die Blätter und braucht kaum Wasser.",
     toxicity: {
       cats: "leicht_giftig",
       dogs: "leicht_giftig",
@@ -1525,10 +1784,14 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "sonne",
     watering: "mittel",
+    soil: "Durchlässiger, kalkhaltiger, nährstoffreicher Boden.",
     careTips: [
       "Stabiles Rankgerüst oder Pergola bereitstellen",
       "Im Winter kräftig zurückschneiden",
     ],
+    repotting: "Im Beet nicht nötig, Kübelpflanzen alle 2–3 Jahre.",
+    overwintering:
+      "Winterhart – verliert im Herbst die Blätter und wird im Winter (Saftruhe) kräftig zurückgeschnitten.",
     toxicity: {
       cats: "giftig",
       dogs: "giftig",
@@ -1549,10 +1812,13 @@ export const plants: Plant[] = [
     difficulty: "mittel",
     sunlight: "schatten",
     watering: "viel",
+    soil: "Humusreiche, torfhaltige, feuchtigkeitsspeichernde Zimmerpflanzenerde.",
     careTips: [
       "Gleichmäßig feucht halten, mag trockene Heizungsluft gar nicht",
       "Regelmäßiges Besprühen simuliert tropisches Klima",
     ],
+    repotting: "Jährlich im Frühjahr, sobald der Topf zu eng wird.",
+    overwintering: "Ganzjährig als Zimmerpflanze, im Winter vor trockener Heizungsluft schützen (regelmäßig besprühen).",
     toxicity: { cats: "ungiftig", dogs: "ungiftig" },
   },
 ];

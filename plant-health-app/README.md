@@ -70,14 +70,20 @@ der API-Key darf dafür nie im Frontend liegen).
 
 `src/data/plants.ts` enthält ~80 gängige Balkon-, Garten-, Zimmer-, Bad-
 und Küchenpflanzen mit Jahreszeiten-Eignung, Standort (Balkon/Garten/
-Zimmer/Badezimmer/Küche), Pflegeaufwand, Pflegetipps sowie Giftigkeit für
-Katzen und Hunde. Gemüse, Obst und Kräuter tragen zusätzlich
-`category: "gemuese" | "obst" | "kraeuter"` (fehlt bei reinen
-Zierpflanzen). Die Giftigkeits-Angaben beruhen auf allgemein bekannten, gängigen
-Einschätzungen und ersetzen keine tierärztliche Beratung – bei
-Vergiftungsverdacht immer Tierarzt/Giftnotruf kontaktieren. Weitere
-Pflanzen lassen sich einfach als zusätzliche Einträge in dieser Datei
-ergänzen.
+Zimmer/Badezimmer/Küche), Pflegeaufwand, Substrat (`soil`), Umtopf-
+Rhythmus (`repotting`), saisonaler Pflege/Überwinterung (`overwintering`),
+Pflegetipps sowie Giftigkeit für Katzen und Hunde. Gemüse, Obst und
+Kräuter tragen zusätzlich `category: "gemuese" | "obst" | "kraeuter"`
+(fehlt bei reinen Zierpflanzen). Die Giftigkeits-Angaben beruhen auf
+allgemein bekannten, gängigen Einschätzungen und ersetzen keine
+tierärztliche Beratung – bei Vergiftungsverdacht immer Tierarzt/
+Giftnotruf kontaktieren. Weitere Pflanzen lassen sich einfach als
+zusätzliche Einträge in dieser Datei ergänzen.
+
+Substrat, Umtopf-Rhythmus und die saisonale Pflege (z. B. wie eine
+Zitrone im Sommer draußen und im Winter hell/kühl drinnen überwintert)
+stehen auf der jeweiligen Pflanzen-Detailseite (`/pflanzen/:id`) in den
+Karten „Substrat", „Umtopfen" und „Pflege im Jahresverlauf".
 
 ## Bekannte Grenzen
 

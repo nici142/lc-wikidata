@@ -23,7 +23,13 @@ export interface Plant {
   difficulty: Difficulty;
   sunlight: Sunlight;
   watering: Watering;
+  /** Bevorzugtes Substrat/Erde. */
+  soil: string;
   careTips: string[];
+  /** Wie oft/wann umgetopft werden sollte (bzw. Hinweis, dass es entfällt). */
+  repotting: string;
+  /** Wie sich die Pflege übers Jahr unterscheidet, insbesondere Überwinterung. */
+  overwintering: string;
   toxicity: Toxicity;
   /** Optional: markiert Gemüse/Obst/Kräuter. Fehlt bei reinen Zierpflanzen. */
   category?: Category;
