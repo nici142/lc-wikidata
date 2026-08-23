@@ -5,7 +5,7 @@ import { DIFFICULTY_LABELS, LOCATION_LABELS } from "../data/types";
 import PlantCard from "../components/PlantCard";
 
 const difficulties: Difficulty[] = ["einfach", "mittel", "anspruchsvoll"];
-const locations: Location[] = ["balkon", "garten"];
+const locations: Location[] = ["balkon", "garten", "zimmer"];
 
 const difficultyHint: Record<Difficulty, string> = {
   einfach: "Verzeiht auch mal vergessenes Gießen – ideal für Einsteiger.",
@@ -43,7 +43,7 @@ export default function CarePage() {
               : "bg-white text-leaf-800 ring-1 ring-leaf-200 hover:bg-leaf-100"
           }`}
         >
-          Balkon &amp; Garten
+          Alle Standorte
         </button>
         {locations.map((loc) => (
           <button

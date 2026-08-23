@@ -2,8 +2,10 @@ import { NavLink } from "react-router-dom";
 
 const links = [
   { to: "/", label: "Diagnose", icon: "📷" },
+  { to: "/suche", label: "Suche", icon: "🔍" },
   { to: "/balkon", label: "Balkonpflanzen", icon: "🪴" },
   { to: "/garten", label: "Gartenpflanzen", icon: "🌳" },
+  { to: "/zimmer", label: "Zimmerpflanzen", icon: "🏠" },
   { to: "/pflege", label: "Pflegeaufwand", icon: "🧰" },
   { to: "/tiere", label: "Tiersicherheit", icon: "🐾" },
 ];

@@ -1,6 +1,6 @@
 export type Season = "fruehling" | "sommer" | "herbst" | "winter";
 export type Difficulty = "einfach" | "mittel" | "anspruchsvoll";
-export type Location = "balkon" | "garten";
+export type Location = "balkon" | "garten" | "zimmer";
 export type ToxicityLevel = "giftig" | "leicht_giftig" | "ungiftig";
 export type Sunlight = "sonne" | "halbschatten" | "schatten";
 export type Watering = "wenig" | "mittel" | "viel";
@@ -49,6 +49,7 @@ export const DIFFICULTY_LABELS: Record<Difficulty, string> = {
 export const LOCATION_LABELS: Record<Location, string> = {
   balkon: "Balkon",
   garten: "Garten",
+  zimmer: "Zimmer",
 };
 
 export const TOXICITY_LABELS: Record<ToxicityLevel, string> = {
