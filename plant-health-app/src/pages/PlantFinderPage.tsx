@@ -129,6 +129,18 @@ export default function PlantFinderPage() {
   const [sort, setSort] = useState(
     readParam<SortOption>(params, "sortierung", ["empfohlen", "name", "pflege"], "empfohlen"),
   );
+  // Bei einem Deep-Link mit vorbelegten Filtern (z. B. von der Startseite) das Panel
+  // direkt geöffnet zeigen, damit klar ist, warum die Liste schon gefiltert ist.
+  const [filtersOpen, setFiltersOpen] = useState(
+    () =>
+      standort !== "alle" ||
+      kategorie !== "alle" ||
+      season !== "alle" ||
+      difficulty !== "alle" ||
+      pet !== "alle" ||
+      sunlight !== "alle" ||
+      watering !== "alle",
+  );
 
   // Aktive Filter in der URL spiegeln, damit sich Ansichten teilen/mit Zurück-Button aufrufen lassen.
   useEffect(() => {
@@ -196,10 +208,10 @@ export default function PlantFinderPage() {
     [herbs],
   );
 
-  const activeFilterCount =
-    (query ? 1 : 0) +
-    (onlyFavorites ? 1 : 0) +
-    [standort, kategorie, season, difficulty, pet, sunlight, watering].filter((v) => v !== "alle").length;
+  const categoryFilterCount = [standort, kategorie, season, difficulty, pet, sunlight, watering].filter(
+    (v) => v !== "alle",
+  ).length;
+  const activeFilterCount = (query ? 1 : 0) + (onlyFavorites ? 1 : 0) + categoryFilterCount;
 
   function resetFilters() {
     setQuery("");
@@ -221,32 +233,49 @@ export default function PlantFinderPage() {
         description="Durchsuche alle Pflanzen und kombiniere beliebig viele Filter – z. B. nur katzensichere Balkonpflanzen für den Sommer."
       />
 
-      <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
-        <div className="relative max-w-lg flex-1">
-          <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-leaf-500">
-            🔍
+      <div className="relative mt-6">
+        <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-leaf-500">
+          🔍
+        </span>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Pflanze suchen, z. B. Lavendel, Aloe, Sansevieria …"
+          className="w-full rounded-full border border-bark-200 bg-white py-3 pl-11 pr-4 text-sm shadow-sm outline-none placeholder:text-bark-400 focus:border-leaf-400 focus:ring-4 focus:ring-leaf-100"
+        />
+        {query && (
+          <button
+            onClick={() => setQuery("")}
+            aria-label="Suche zurücksetzen"
+            className="absolute inset-y-0 right-4 flex items-center text-bark-400 hover:text-bark-700"
+          >
+            ✕
+          </button>
+        )}
+      </div>
+
+      <div className="mt-2.5 flex gap-2.5">
+        <button
+          type="button"
+          onClick={() => setFiltersOpen((v) => !v)}
+          aria-expanded={filtersOpen}
+          className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-5 py-3 text-sm font-medium transition-colors sm:flex-none ${
+            filtersOpen || categoryFilterCount > 0
+              ? "bg-leaf-700 text-white shadow-sm shadow-leaf-900/15"
+              : "bg-white text-bark-700 ring-1 ring-bark-200 hover:bg-leaf-50 hover:text-leaf-800"
+          }`}
+        >
+          <span aria-hidden>⚙️</span>
+          Filter{categoryFilterCount > 0 ? ` (${categoryFilterCount})` : ""}
+          <span aria-hidden className={`transition-transform ${filtersOpen ? "rotate-180" : ""}`}>
+            ▾
           </span>
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Pflanze suchen, z. B. Lavendel, Aloe, Sansevieria …"
-            className="w-full rounded-full border border-bark-200 bg-white py-3 pl-11 pr-4 text-sm shadow-sm outline-none placeholder:text-bark-400 focus:border-leaf-400 focus:ring-4 focus:ring-leaf-100"
-          />
-          {query && (
-            <button
-              onClick={() => setQuery("")}
-              aria-label="Suche zurücksetzen"
-              className="absolute inset-y-0 right-4 flex items-center text-bark-400 hover:text-bark-700"
-            >
-              ✕
-            </button>
-          )}
-        </div>
+        </button>
         <button
           type="button"
           onClick={() => setOnlyFavorites((v) => !v)}
-          className={`flex items-center justify-center gap-1.5 rounded-full px-5 py-3 text-sm font-medium transition-colors ${
+          className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-5 py-3 text-sm font-medium transition-colors sm:flex-none ${
             onlyFavorites
               ? "bg-clay-100 text-clay-600"
               : "bg-white text-bark-700 ring-1 ring-bark-200 hover:bg-clay-50 hover:text-clay-600"
@@ -257,25 +286,27 @@ export default function PlantFinderPage() {
         </button>
       </div>
 
-      <div className="mt-5 rounded-2xl border border-bark-200/70 bg-white/70 p-5">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <FilterGroup label="Standort" value={standort} onChange={setStandort} options={standortOptions} />
-          <FilterGroup label="Kategorie" value={kategorie} onChange={setKategorie} options={kategorieOptions} />
-          <FilterGroup label="Jahreszeit" value={season} onChange={setSeason} options={seasonOptions} />
-          <FilterGroup label="Pflegeaufwand" value={difficulty} onChange={setDifficulty} options={difficultyOptions} />
-          <FilterGroup label="Lichtbedarf" value={sunlight} onChange={setSunlight} options={sunlightOptions} />
-          <FilterGroup label="Wasserbedarf" value={watering} onChange={setWatering} options={wateringOptions} />
-          <FilterGroup label="Tierhaltung" value={pet} onChange={setPet} options={petOptions} />
+      {filtersOpen && (
+        <div className="mt-2.5 rounded-2xl border border-bark-200/70 bg-white/70 p-5">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <FilterGroup label="Standort" value={standort} onChange={setStandort} options={standortOptions} />
+            <FilterGroup label="Kategorie" value={kategorie} onChange={setKategorie} options={kategorieOptions} />
+            <FilterGroup label="Jahreszeit" value={season} onChange={setSeason} options={seasonOptions} />
+            <FilterGroup label="Pflegeaufwand" value={difficulty} onChange={setDifficulty} options={difficultyOptions} />
+            <FilterGroup label="Lichtbedarf" value={sunlight} onChange={setSunlight} options={sunlightOptions} />
+            <FilterGroup label="Wasserbedarf" value={watering} onChange={setWatering} options={wateringOptions} />
+            <FilterGroup label="Tierhaltung" value={pet} onChange={setPet} options={petOptions} />
+          </div>
+          {activeFilterCount > 0 && (
+            <button
+              onClick={resetFilters}
+              className="mt-4 text-xs font-medium text-leaf-700 underline decoration-leaf-300 underline-offset-2 hover:text-leaf-800"
+            >
+              Alle Filter zurücksetzen ({activeFilterCount})
+            </button>
+          )}
         </div>
-        {activeFilterCount > 0 && (
-          <button
-            onClick={resetFilters}
-            className="mt-4 text-xs font-medium text-leaf-700 underline decoration-leaf-300 underline-offset-2 hover:text-leaf-800"
-          >
-            Alle Filter zurücksetzen ({activeFilterCount})
-          </button>
-        )}
-      </div>
+      )}
 
       {producePlants.length > 0 && (
         <div className="mt-5 flex items-start gap-2 rounded-xl border border-leaf-100 bg-leaf-50 p-3 text-sm text-leaf-800">

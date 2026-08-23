@@ -13,8 +13,12 @@ Eine Web-App rund um Pflanzengesundheit und Pflanzenwahl:
   Garten/Zimmer/Badezimmer/Küche), Kategorie (Zier-/Gemüse-/Obstpflanzen/
   Kräuter), Jahreszeit, Pflegeaufwand, Lichtbedarf, Wasserbedarf und
   Tierhaltung (z. B. „nur katzensicher") – plus Sortierung (Name/
-  Pflegeaufwand) und ein Umschalter „Nur Merkliste". Der Filterstand
-  landet in der URL und lässt sich so teilen/mit Zurück-Button aufrufen.
+  Pflegeaufwand) und ein Umschalter „Nur Merkliste". Das Filter-Panel ist
+  standardmäßig eingeklappt (Badge zeigt die Anzahl aktiver Filter) und
+  öffnet sich automatisch bei einem Deep-Link mit vorbelegten Filtern –
+  damit man auf dem Handy nicht erst daran vorbeiscrollen muss, um
+  Pflanzen zu sehen. Der Filterstand landet in der URL und lässt sich so
+  teilen/mit Zurück-Button aufrufen.
 - **📄 Pflanzendetailseite** (`/pflanzen/:id`) – eigene, verlinkbare Seite
   je Pflanze mit vollständigem Steckbrief, Pflegetipps, Tiersicherheit und
   ähnlichen Pflanzen.

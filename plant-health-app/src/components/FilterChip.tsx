@@ -8,7 +8,7 @@ interface FilterChipProps {
 }
 
 export default function FilterChip({ active, onClick, children, size = "md" }: FilterChipProps) {
-  const sizeClasses = size === "sm" ? "px-3 py-1 text-xs" : "px-4 py-2 text-sm";
+  const sizeClasses = size === "sm" ? "px-3 py-1.5 text-xs" : "px-4 py-2 text-sm";
   return (
     <button
       onClick={onClick}
