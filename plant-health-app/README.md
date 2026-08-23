@@ -10,9 +10,10 @@ Eine Web-App rund um Pflanzengesundheit und Pflanzenwahl:
   Pilzbefall/Schädlinge, Mehltau-Anzeichen).
 - **🌿 Pflanzenfinder** – eine Seite für alles andere: Freitextsuche
   (umlauttolerant) plus fünf kombinierbare Filter – Standort (Balkon/
-  Garten/Zimmer), Kategorie (Zier-/Gemüsepflanzen), Jahreszeit,
-  Pflegeaufwand und Tierhaltung (z. B. „nur katzensicher"). Der Filterstand
-  landet in der URL und lässt sich so teilen/mit Zurück-Button aufrufen.
+  Garten/Zimmer/Badezimmer/Küche), Kategorie (Zier-/Gemüse-/Obstpflanzen/
+  Kräuter), Jahreszeit, Pflegeaufwand und Tierhaltung (z. B. „nur
+  katzensicher"). Der Filterstand landet in der URL und lässt sich so
+  teilen/mit Zurück-Button aufrufen.
 
 `/` ist die Startseite, die Diagnose liegt unter `/diagnose`. Alte
 Direktlinks wie `/balkon`, `/garten`, `/zimmer`, `/gemuese`, `/tiere`,
@@ -51,11 +52,12 @@ der API-Key darf dafür nie im Frontend liegen).
 
 ## Pflanzendatenbank
 
-`src/data/plants.ts` enthält ~65 gängige Balkon-, Garten-, Zimmer- und
-Gemüsepflanzen mit Jahreszeiten-Eignung, Standort (Balkon/Garten/Zimmer),
-Pflegeaufwand, Pflegetipps sowie Giftigkeit für Katzen und Hunde.
-Gemüse-/Nutzpflanzen tragen zusätzlich `category: "gemuese"`. Die
-Giftigkeits-Angaben beruhen auf allgemein bekannten, gängigen
+`src/data/plants.ts` enthält ~80 gängige Balkon-, Garten-, Zimmer-, Bad-
+und Küchenpflanzen mit Jahreszeiten-Eignung, Standort (Balkon/Garten/
+Zimmer/Badezimmer/Küche), Pflegeaufwand, Pflegetipps sowie Giftigkeit für
+Katzen und Hunde. Gemüse, Obst und Kräuter tragen zusätzlich
+`category: "gemuese" | "obst" | "kraeuter"` (fehlt bei reinen
+Zierpflanzen). Die Giftigkeits-Angaben beruhen auf allgemein bekannten, gängigen
 Einschätzungen und ersetzen keine tierärztliche Beratung – bei
 Vergiftungsverdacht immer Tierarzt/Giftnotruf kontaktieren. Weitere
 Pflanzen lassen sich einfach als zusätzliche Einträge in dieser Datei

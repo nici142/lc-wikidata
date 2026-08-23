@@ -1,10 +1,10 @@
 export type Season = "fruehling" | "sommer" | "herbst" | "winter";
 export type Difficulty = "einfach" | "mittel" | "anspruchsvoll";
-export type Location = "balkon" | "garten" | "zimmer";
+export type Location = "balkon" | "garten" | "zimmer" | "bad" | "kueche";
 export type ToxicityLevel = "giftig" | "leicht_giftig" | "ungiftig";
 export type Sunlight = "sonne" | "halbschatten" | "schatten";
 export type Watering = "wenig" | "mittel" | "viel";
-export type Category = "zier" | "gemuese";
+export type Category = "zier" | "gemuese" | "obst" | "kraeuter";
 
 export interface Toxicity {
   cats: ToxicityLevel;
@@ -25,7 +25,7 @@ export interface Plant {
   watering: Watering;
   careTips: string[];
   toxicity: Toxicity;
-  /** Optional: markiert Gemüse-/Nutzpflanzen. Fehlt bei Zierpflanzen. */
+  /** Optional: markiert Gemüse/Obst/Kräuter. Fehlt bei reinen Zierpflanzen. */
   category?: Category;
 }
 
@@ -53,6 +53,8 @@ export const LOCATION_LABELS: Record<Location, string> = {
   balkon: "Balkon",
   garten: "Garten",
   zimmer: "Zimmer",
+  bad: "Badezimmer",
+  kueche: "Küche",
 };
 
 export const TOXICITY_LABELS: Record<ToxicityLevel, string> = {

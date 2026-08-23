@@ -28,12 +28,16 @@ const standortOptions: { value: Location | "alle"; label: string; icon?: string 
   { value: "balkon", label: LOCATION_LABELS.balkon, icon: "🪴" },
   { value: "garten", label: LOCATION_LABELS.garten, icon: "🌳" },
   { value: "zimmer", label: LOCATION_LABELS.zimmer, icon: "🏠" },
+  { value: "bad", label: LOCATION_LABELS.bad, icon: "🛁" },
+  { value: "kueche", label: LOCATION_LABELS.kueche, icon: "🍳" },
 ];
 
 const kategorieOptions: { value: Category | "alle"; label: string; icon?: string }[] = [
   { value: "alle", label: "Alle" },
   { value: "zier", label: "Zierpflanzen", icon: "🌸" },
   { value: "gemuese", label: "Gemüse", icon: "🥕" },
+  { value: "obst", label: "Obst", icon: "🍓" },
+  { value: "kraeuter", label: "Kräuter", icon: "🌿" },
 ];
 
 const seasonOptions: { value: Season | "alle"; label: string; icon?: string }[] = [
@@ -63,10 +67,20 @@ export default function PlantFinderPage() {
 
   const [query, setQuery] = useState(params.get("q") ?? "");
   const [standort, setStandort] = useState(
-    readParam<Location | "alle">(params, "standort", ["alle", "balkon", "garten", "zimmer"], "alle"),
+    readParam<Location | "alle">(
+      params,
+      "standort",
+      ["alle", "balkon", "garten", "zimmer", "bad", "kueche"],
+      "alle",
+    ),
   );
   const [kategorie, setKategorie] = useState(
-    readParam<Category | "alle">(params, "kategorie", ["alle", "zier", "gemuese"], "alle"),
+    readParam<Category | "alle">(
+      params,
+      "kategorie",
+      ["alle", "zier", "gemuese", "obst", "kraeuter"],
+      "alle",
+    ),
   );
   const [season, setSeason] = useState(
     readParam<Season | "alle">(params, "jahreszeit", ["alle", "fruehling", "sommer", "herbst", "winter"], "alle"),
@@ -110,10 +124,23 @@ export default function PlantFinderPage() {
     });
   }, [standort, kategorie, season, difficulty, pet, normalizedQuery]);
 
-  const vegetables = useMemo(() => plants.filter((p) => p.category === "gemuese"), []);
-  const balconyVegCount = useMemo(
-    () => vegetables.filter((p) => p.locations.includes("balkon")).length,
-    [vegetables],
+  const produceLabel = kategorie === "obst" ? "Obstsorten" : "Gemüsesorten";
+  const producePlants = useMemo(
+    () =>
+      kategorie === "gemuese" || kategorie === "obst"
+        ? plants.filter((p) => p.category === kategorie)
+        : [],
+    [kategorie],
+  );
+  const balconyProduceCount = useMemo(
+    () => producePlants.filter((p) => p.locations.includes("balkon")).length,
+    [producePlants],
+  );
+
+  const herbs = useMemo(() => plants.filter((p) => p.category === "kraeuter"), []);
+  const kitchenHerbCount = useMemo(
+    () => herbs.filter((p) => p.locations.includes("kueche")).length,
+    [herbs],
   );
 
   const activeFilterCount =
@@ -177,12 +204,23 @@ export default function PlantFinderPage() {
         )}
       </div>
 
-      {kategorie === "gemuese" && (
+      {producePlants.length > 0 && (
         <div className="mt-5 flex items-start gap-2 rounded-xl border border-leaf-100 bg-leaf-50 p-3 text-sm text-leaf-800">
           <span aria-hidden>💡</span>
           <span>
-            {balconyVegCount} von {vegetables.length} Gemüsesorten lassen sich in ausreichend großen
-            Kübeln auch auf dem Balkon ziehen – filtere zusätzlich nach „Balkon", um sie zu sehen.
+            {balconyProduceCount} von {producePlants.length} {produceLabel} lassen sich in
+            ausreichend großen Kübeln auch auf dem Balkon ziehen – filtere zusätzlich nach
+            „Balkon", um sie zu sehen.
+          </span>
+        </div>
+      )}
+
+      {kategorie === "kraeuter" && (
+        <div className="mt-5 flex items-start gap-2 rounded-xl border border-leaf-100 bg-leaf-50 p-3 text-sm text-leaf-800">
+          <span aria-hidden>💡</span>
+          <span>
+            {kitchenHerbCount} von {herbs.length} Kräutern eignen sich auch fürs Fensterbrett in
+            der Küche – filtere zusätzlich nach „Küche", um sie zu sehen.
           </span>
         </div>
       )}
