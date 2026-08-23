@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
+import HomePage from "./pages/HomePage";
 import DiagnosePage from "./pages/DiagnosePage";
 import PlantFinderPage from "./pages/PlantFinderPage";
 
@@ -9,7 +10,8 @@ export default function App() {
       <Nav />
       <main>
         <Routes>
-          <Route path="/" element={<DiagnosePage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/diagnose" element={<DiagnosePage />} />
           <Route path="/pflanzen" element={<PlantFinderPage />} />
 
           {/* Alte Einzelseiten sind im Pflanzenfinder aufgegangen – Links bleiben nutzbar. */}

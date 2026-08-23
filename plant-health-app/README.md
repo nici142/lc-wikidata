@@ -2,6 +2,9 @@
 
 Eine Web-App rund um Pflanzengesundheit und Pflanzenwahl:
 
+- **🏠 Startseite** – erklärt kurz, was die App macht, mit direkten
+  Einstiegen in Diagnose, Pflanzenfinder, Tiersicherheit und Gemüse sowie
+  ein paar Kennzahlen zur Pflanzendatenbank.
 - **📷 Diagnose** – Foto einer Pflanze hochladen und eine Einschätzung zum
   Gesundheitszustand erhalten (mögliche Nährstoffmängel, Trockenstress,
   Pilzbefall/Schädlinge, Mehltau-Anzeichen).
@@ -11,7 +14,8 @@ Eine Web-App rund um Pflanzengesundheit und Pflanzenwahl:
   Pflegeaufwand und Tierhaltung (z. B. „nur katzensicher"). Der Filterstand
   landet in der URL und lässt sich so teilen/mit Zurück-Button aufrufen.
 
-Alte Direktlinks wie `/balkon`, `/garten`, `/zimmer`, `/gemuese`, `/tiere`,
+`/` ist die Startseite, die Diagnose liegt unter `/diagnose`. Alte
+Direktlinks wie `/balkon`, `/garten`, `/zimmer`, `/gemuese`, `/tiere`,
 `/pflege` und `/suche` funktionieren weiterhin – sie leiten mit passend
 vorbelegten Filtern auf `/pflanzen` um.
 
