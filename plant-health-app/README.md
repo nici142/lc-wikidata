@@ -1,5 +1,9 @@
 # 🌿 PlantBuddy
 
+**Live:** https://nici142.github.io/lc-wikidata/app/ (via GitHub Pages,
+Deploy aus dem `gh-pages`-Branch, Unterverzeichnis `/app`, unabhängig von
+der Wikidata-Lesson-Seite im Rest des Branches).
+
 Eine Web-App rund um Pflanzengesundheit und Pflanzenwahl:
 
 - **🏠 Startseite** – erklärt kurz, was die App macht, mit direkten
@@ -49,6 +53,31 @@ npm run dev       # Dev-Server
 npm run build     # Produktions-Build (tsc + vite build)
 npm run preview   # Build lokal ansehen
 ```
+
+## Deploy auf GitHub Pages
+
+Pages ist für dieses Repo als klassischer Jekyll-Branch-Build auf
+`gh-pages` konfiguriert und bedient dort die Wikidata-Lesson-Seite. Damit
+die App diesen Build nicht stört, wird sie separat als reiner Static-
+Build in ein Unterverzeichnis `/app` desselben Branches kopiert:
+
+```bash
+# 1. Mit dem Unterpfad als Base bauen
+npx vite build --base=/lc-wikidata/app/ --outDir dist-ghpages
+
+# 2. gh-pages in ein Worktree auschecken, app/ ersetzen, committen, pushen
+git worktree add /tmp/gh-pages-worktree gh-pages
+rm -rf /tmp/gh-pages-worktree/app
+cp -r dist-ghpages /tmp/gh-pages-worktree/app
+cd /tmp/gh-pages-worktree && git add app && git commit -m "Deploy app" && git push origin gh-pages
+git worktree remove /tmp/gh-pages-worktree --force
+```
+
+Damit das aus einem Unterverzeichnis heraus funktioniert, nutzt
+`BrowserRouter` `basename={import.meta.env.BASE_URL}`, `index.html`
+referenziert Icons/Manifest über den `%BASE_URL%`-Platzhalter, und das
+Manifest selbst verwendet relative Pfade. Bei einem normalen Root-Build
+(`npm run build`, `BASE_URL="/"`) ändert sich dadurch nichts.
 
 ## Wie funktioniert die Bild-Diagnose?
 
