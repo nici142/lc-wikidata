@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { plants } from "../data/plants";
 import PlantCard from "../components/PlantCard";
+import PageHeader from "../components/PageHeader";
 
 function normalize(value: string): string {
   return value
@@ -25,14 +26,15 @@ export default function SearchPage() {
   }, [normalizedQuery]);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8">
-      <h1 className="font-display text-2xl font-bold text-leaf-900">Pflanzen suchen</h1>
-      <p className="mt-1 max-w-2xl text-bark-900/70">
-        Suche nach deutschem oder botanischem Namen, z. B. „Geranie“ oder „Pelargonium“.
-      </p>
+    <div className="mx-auto max-w-6xl px-4 py-10">
+      <PageHeader
+        icon="🔍"
+        title="Pflanzen suchen"
+        description="Suche nach deutschem oder botanischem Namen, z. B. „Geranie“ oder „Pelargonium“."
+      />
 
-      <div className="relative mt-5 max-w-lg">
-        <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-leaf-500">
+      <div className="relative mt-6 max-w-lg">
+        <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-leaf-500">
           🔍
         </span>
         <input
@@ -41,20 +43,20 @@ export default function SearchPage() {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="z. B. Lavendel, Aloe, Sansevieria …"
           autoFocus
-          className="w-full rounded-full border border-leaf-200 bg-white py-2.5 pl-10 pr-4 text-sm shadow-sm outline-none placeholder:text-bark-900/40 focus:border-leaf-500 focus:ring-2 focus:ring-leaf-200"
+          className="w-full rounded-full border border-bark-200 bg-white py-3 pl-11 pr-4 text-sm shadow-sm outline-none placeholder:text-bark-400 focus:border-leaf-400 focus:ring-4 focus:ring-leaf-100"
         />
         {query && (
           <button
             onClick={() => setQuery("")}
             aria-label="Suche zurücksetzen"
-            className="absolute inset-y-0 right-3 flex items-center text-bark-900/40 hover:text-bark-900/70"
+            className="absolute inset-y-0 right-4 flex items-center text-bark-400 hover:text-bark-700"
           >
             ✕
           </button>
         )}
       </div>
 
-      <p className="mt-4 text-sm text-bark-900/60">
+      <p className="mt-5 text-sm text-bark-500">
         {results.length} {results.length === 1 ? "Pflanze gefunden" : "Pflanzen gefunden"}
       </p>
 
@@ -65,7 +67,7 @@ export default function SearchPage() {
           ))}
         </div>
       ) : (
-        <p className="mt-8 rounded-xl border border-leaf-200 bg-white p-4 text-sm text-bark-900/70">
+        <p className="mt-8 rounded-xl border border-bark-200 bg-white p-4 text-sm text-bark-500">
           Keine Pflanze gefunden. Versuch es mit einem anderen Suchbegriff.
         </p>
       )}

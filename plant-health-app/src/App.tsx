@@ -10,7 +10,7 @@ import SearchPage from "./pages/SearchPage";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-leaf-50">
+    <div className="min-h-screen">
       <Nav />
       <main>
         <Routes>
@@ -23,7 +23,7 @@ export default function App() {
           <Route path="/tiere" element={<PetSafetyPage />} />
         </Routes>
       </main>
-      <footer className="mx-auto max-w-6xl px-4 py-10 text-center text-xs text-bark-900/40">
+      <footer className="mx-auto max-w-6xl px-4 py-10 text-center text-xs text-bark-400">
         🌿 Pflanzenkompass – Bilddiagnose läuft lokal im Browser. Kein Ersatz für fachlichen
         oder tierärztlichen Rat.
       </footer>

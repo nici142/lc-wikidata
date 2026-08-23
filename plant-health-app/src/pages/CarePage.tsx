@@ -3,6 +3,8 @@ import { plants } from "../data/plants";
 import type { Difficulty, Location } from "../data/types";
 import { DIFFICULTY_LABELS, LOCATION_LABELS } from "../data/types";
 import PlantCard from "../components/PlantCard";
+import PageHeader from "../components/PageHeader";
+import FilterChip from "../components/FilterChip";
 
 const difficulties: Difficulty[] = ["einfach", "mittel", "anspruchsvoll"];
 const locations: Location[] = ["balkon", "garten", "zimmer"];
@@ -25,51 +27,34 @@ export default function CarePage() {
   }, [location]);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8">
-      <h1 className="font-display text-2xl font-bold text-leaf-900">
-        Pflanzen nach Pflegeaufwand
-      </h1>
-      <p className="mt-1 max-w-2xl text-bark-900/70">
-        Von pflegeleicht bis anspruchsvoll – finde Pflanzen passend zu deiner verfügbaren Zeit
-        und Erfahrung.
-      </p>
+    <div className="mx-auto max-w-6xl px-4 py-10">
+      <PageHeader
+        icon="🧰"
+        title="Pflanzen nach Pflegeaufwand"
+        description="Von pflegeleicht bis anspruchsvoll – finde Pflanzen passend zu deiner verfügbaren Zeit und Erfahrung."
+      />
 
-      <div className="mt-5 flex flex-wrap gap-2">
-        <button
-          onClick={() => setLocation("alle")}
-          className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-            location === "alle"
-              ? "bg-leaf-600 text-white shadow-sm"
-              : "bg-white text-leaf-800 ring-1 ring-leaf-200 hover:bg-leaf-100"
-          }`}
-        >
+      <div className="mt-6 flex flex-wrap gap-2">
+        <FilterChip active={location === "alle"} onClick={() => setLocation("alle")}>
           Alle Standorte
-        </button>
+        </FilterChip>
         {locations.map((loc) => (
-          <button
-            key={loc}
-            onClick={() => setLocation(loc)}
-            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-              location === loc
-                ? "bg-leaf-600 text-white shadow-sm"
-                : "bg-white text-leaf-800 ring-1 ring-leaf-200 hover:bg-leaf-100"
-            }`}
-          >
+          <FilterChip key={loc} active={location === loc} onClick={() => setLocation(loc)}>
             {LOCATION_LABELS[loc]}
-          </button>
+          </FilterChip>
         ))}
       </div>
 
-      <div className="mt-8 space-y-10">
+      <div className="mt-10 space-y-12">
         {grouped.map(({ difficulty, items }) => (
           <section key={difficulty}>
-            <div className="flex items-baseline justify-between border-b border-leaf-200 pb-2">
+            <div className="flex items-baseline justify-between border-b border-bark-200 pb-2">
               <h2 className="font-display text-lg font-semibold text-leaf-800">
                 {DIFFICULTY_LABELS[difficulty]}
               </h2>
-              <span className="text-xs text-bark-900/50">{items.length} Pflanzen</span>
+              <span className="text-xs text-bark-400">{items.length} Pflanzen</span>
             </div>
-            <p className="mt-2 text-sm text-bark-900/60">{difficultyHint[difficulty]}</p>
+            <p className="mt-2 text-sm text-bark-500">{difficultyHint[difficulty]}</p>
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {items.map((plant) => (
                 <PlantCard key={plant.id} plant={plant} />

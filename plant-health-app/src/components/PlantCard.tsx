@@ -6,79 +6,89 @@ import {
   TOXICITY_LABELS,
 } from "../data/types";
 
-const difficultyColor: Record<Plant["difficulty"], string> = {
-  einfach: "bg-leaf-100 text-leaf-700",
-  mittel: "bg-amber-100 text-amber-700",
-  anspruchsvoll: "bg-rose-100 text-rose-700",
+const difficultyDot: Record<Plant["difficulty"], string> = {
+  einfach: "bg-leaf-500",
+  mittel: "bg-clay-400",
+  anspruchsvoll: "bg-rose-500",
 };
 
 const toxicityColor: Record<string, string> = {
-  giftig: "bg-rose-100 text-rose-700",
-  leicht_giftig: "bg-amber-100 text-amber-700",
-  ungiftig: "bg-leaf-100 text-leaf-700",
+  giftig: "bg-rose-50 text-rose-700 ring-1 ring-rose-100",
+  leicht_giftig: "bg-clay-50 text-clay-600 ring-1 ring-clay-100",
+  ungiftig: "bg-leaf-50 text-leaf-700 ring-1 ring-leaf-100",
 };
 
 export default function PlantCard({ plant }: { plant: Plant }) {
   const petSafe = plant.toxicity.cats === "ungiftig" && plant.toxicity.dogs === "ungiftig";
 
   return (
-    <article className="flex flex-col gap-3 rounded-2xl border border-leaf-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md">
+    <article className="group flex flex-col gap-3 rounded-2xl border border-bark-200/70 bg-white/90 p-4 shadow-[0_1px_2px_rgba(43,39,30,0.04)] transition-all duration-200 hover:-translate-y-0.5 hover:border-leaf-200 hover:shadow-[0_12px_24px_-12px_rgba(43,39,30,0.18)]">
       <div className="flex items-start justify-between gap-2">
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="text-3xl leading-none">{plant.emoji}</span>
-            <div>
-              <h3 className="font-display font-semibold text-leaf-900">{plant.name}</h3>
-              <p className="text-xs italic text-leaf-600">{plant.latinName}</p>
-            </div>
+        <div className="flex items-center gap-3">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-leaf-50 text-2xl leading-none ring-1 ring-leaf-100">
+            {plant.emoji}
+          </span>
+          <div>
+            <h3 className="font-display text-[1.05rem] font-semibold leading-tight text-bark-900">
+              {plant.name}
+            </h3>
+            <p className="text-xs italic text-bark-400">{plant.latinName}</p>
           </div>
         </div>
         {petSafe && (
           <span
             title="Unbedenklich für Katzen und Hunde"
-            className="shrink-0 rounded-full bg-leaf-100 px-2 py-1 text-xs font-medium text-leaf-700"
+            className="shrink-0 rounded-full bg-leaf-100 px-2 py-1 text-[11px] font-medium text-leaf-700"
           >
             🐾 tierfreundlich
           </span>
         )}
       </div>
 
-      <p className="text-sm text-bark-900/80">{plant.description}</p>
+      <p className="text-sm leading-relaxed text-bark-700">{plant.description}</p>
 
-      <div className="flex flex-wrap gap-1.5 text-xs">
+      <div className="flex flex-wrap items-center gap-1.5 text-xs">
         {plant.seasons.map((s) => (
           <span
             key={s}
-            className="flex items-center gap-1 rounded-full bg-leaf-50 px-2 py-1 text-leaf-700 ring-1 ring-leaf-200"
+            className="flex items-center gap-1 rounded-full bg-bark-100 px-2 py-1 text-bark-700"
           >
             {SEASON_ICONS[s]} {SEASON_LABELS[s]}
           </span>
         ))}
-        <span className={`rounded-full px-2 py-1 font-medium ${difficultyColor[plant.difficulty]}`}>
+        <span className="flex items-center gap-1.5 rounded-full bg-bark-100 px-2 py-1 font-medium text-bark-700">
+          <span className={`h-1.5 w-1.5 rounded-full ${difficultyDot[plant.difficulty]}`} />
           {DIFFICULTY_LABELS[plant.difficulty]}
         </span>
       </div>
 
-      <div className="mt-1 grid grid-cols-2 gap-2 text-xs">
-        <div className={`rounded-lg px-2 py-1.5 ${toxicityColor[plant.toxicity.cats]}`}>
-          🐱 Katzen: <strong>{TOXICITY_LABELS[plant.toxicity.cats]}</strong>
+      <div className="mt-0.5 grid grid-cols-2 gap-2 text-xs">
+        <div className={`rounded-lg px-2 py-1.5 leading-tight ${toxicityColor[plant.toxicity.cats]}`}>
+          <div className="opacity-70">🐱 Katzen</div>
+          <strong className="whitespace-nowrap">{TOXICITY_LABELS[plant.toxicity.cats]}</strong>
         </div>
-        <div className={`rounded-lg px-2 py-1.5 ${toxicityColor[plant.toxicity.dogs]}`}>
-          🐶 Hunde: <strong>{TOXICITY_LABELS[plant.toxicity.dogs]}</strong>
+        <div className={`rounded-lg px-2 py-1.5 leading-tight ${toxicityColor[plant.toxicity.dogs]}`}>
+          <div className="opacity-70">🐶 Hunde</div>
+          <strong className="whitespace-nowrap">{TOXICITY_LABELS[plant.toxicity.dogs]}</strong>
         </div>
       </div>
 
-      <details className="group mt-1 text-sm">
-        <summary className="cursor-pointer list-none font-medium text-leaf-700 group-open:mb-2">
-          Pflegetipps anzeigen ▾
+      <details className="group/details mt-0.5 text-sm">
+        <summary className="cursor-pointer list-none font-medium text-leaf-700 marker:content-none group-open/details:mb-2">
+          <span className="inline-flex items-center gap-1">
+            Pflegetipps
+            <span className="text-leaf-400 transition-transform group-open/details:rotate-180">
+              ▾
+            </span>
+          </span>
         </summary>
-        <ul className="ml-4 list-disc space-y-1 text-bark-900/80">
+        <ul className="ml-4 list-disc space-y-1 text-bark-700">
           {plant.careTips.map((tip, i) => (
             <li key={i}>{tip}</li>
           ))}
         </ul>
         {plant.toxicity.notes && (
-          <p className="mt-2 rounded-lg bg-amber-50 p-2 text-xs text-amber-800">
+          <p className="mt-2 rounded-lg bg-clay-50 p-2 text-xs text-clay-600">
             ⚠️ {plant.toxicity.notes}
           </p>
         )}

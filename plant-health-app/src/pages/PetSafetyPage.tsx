@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { plants } from "../data/plants";
 import PlantCard from "../components/PlantCard";
+import PageHeader from "../components/PageHeader";
+import FilterChip from "../components/FilterChip";
 
 type Pet = "katzen" | "hunde" | "beide";
 
@@ -26,37 +28,31 @@ export default function PetSafetyPage() {
   }, [pet]);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8">
-      <h1 className="font-display text-2xl font-bold text-leaf-900">
-        Tiersicherheit: giftig oder unbedenklich?
-      </h1>
-      <p className="mt-1 max-w-2xl text-bark-900/70">
-        Ein Überblick, welche Pflanzen bei Katzen- oder Hundehaltung unbedenklich sind – und bei
-        welchen du besser vorsichtig bist.
-      </p>
+    <div className="mx-auto max-w-6xl px-4 py-10">
+      <PageHeader
+        icon="🐾"
+        tone="clay"
+        title="Tiersicherheit: giftig oder unbedenklich?"
+        description="Ein Überblick, welche Pflanzen bei Katzen- oder Hundehaltung unbedenklich sind – und bei welchen du besser vorsichtig bist."
+      />
 
-      <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
-        ⚠️ Diese Übersicht dient der ersten Orientierung und ersetzt keine tierärztliche
-        Beratung. Bei Vergiftungsverdacht sofort Tierarzt oder Giftnotruf kontaktieren.
+      <div className="mt-5 flex items-start gap-2 rounded-xl border border-clay-100 bg-clay-50 p-3 text-sm text-clay-600">
+        <span aria-hidden>⚠️</span>
+        <span>
+          Diese Übersicht dient der ersten Orientierung und ersetzt keine tierärztliche Beratung.
+          Bei Vergiftungsverdacht sofort Tierarzt oder Giftnotruf kontaktieren.
+        </span>
       </div>
 
-      <div className="mt-5 flex flex-wrap gap-2">
+      <div className="mt-6 flex flex-wrap gap-2">
         {petOptions.map((opt) => (
-          <button
-            key={opt.id}
-            onClick={() => setPet(opt.id)}
-            className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-              pet === opt.id
-                ? "bg-leaf-600 text-white shadow-sm"
-                : "bg-white text-leaf-800 ring-1 ring-leaf-200 hover:bg-leaf-100"
-            }`}
-          >
+          <FilterChip key={opt.id} active={pet === opt.id} onClick={() => setPet(opt.id)}>
             <span>{opt.icon}</span> {opt.label}
-          </button>
+          </FilterChip>
         ))}
       </div>
 
-      <section className="mt-8">
+      <section className="mt-10">
         <div className="flex items-center gap-2 border-b border-leaf-200 pb-2">
           <h2 className="font-display text-lg font-semibold text-leaf-700">
             ✅ Unbedenklich ({safe.length})
@@ -69,7 +65,7 @@ export default function PetSafetyPage() {
         </div>
       </section>
 
-      <section className="mt-10">
+      <section className="mt-12">
         <div className="flex items-center gap-2 border-b border-rose-200 pb-2">
           <h2 className="font-display text-lg font-semibold text-rose-700">
             ⚠️ Giftig oder mit Vorsicht zu genießen ({risky.length})
